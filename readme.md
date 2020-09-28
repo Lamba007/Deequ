@@ -1,19 +1,23 @@
 # Deequ-Scala
 
 Deequ is being used internally at Amazon for verifying the quality of many large production datasets. Dataset producers can add and edit data quality constraints. The system computes data quality metrics on a regular basis (with every new version of a dataset), verifies constraints defined by dataset producers, and publishes datasets to consumers in case of success. In error cases, dataset publication can be stopped, and producers are notified to take action. Data quality issues do not propagate to consumer data pipelines, reducing their blast radius.
+ 
+An open source tool developed & used at Amazon. This is a library built on top of Apache Spark. Works on tabular data, anything which can be represented as a Spark Dataframe.
 
-This project includes functions to insert your data set in the form of CSV or via database table.
+This project includes functions to insert your data in either form as following
+1. set in the form of CSV 
+2. set in the form of database table.
 
-## Basic Usage
+## Components
 
-Basic usage
-Currently PyDeequ only implements the basic functionality of Deequ but hopefully it still brings some value to a python based data science projects. In the followings we demonstrate the basic usage of these four functionalities. There are also example files available in src\pydeequ\examples.
+Currently, Scala implements the functionality of Deequ and provides limited function for python hence this is built using scala to provide power of unit testing for data science projects. In the followings we demonstrate the usage of these four functionalities.
 
 The main components of Deequ are
 
 Analyzers: main metrics computation engine of Deequ, they output descriptive statistics on tabular input data,
 Constrain verification: predefined data quality checks with threshold values as parameters, they based on metrics computed by analyzers,
 Constrain suggestions: automated constrain generation based on a set of rules, which profile the data first to come up with useful constrains.
+Data Quality constraint: add quality constraints based on the business/project requirement. Allow the flexibility with the unit test measures
 
 
 ## Constraint Suggestion

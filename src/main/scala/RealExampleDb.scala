@@ -24,7 +24,7 @@ object RealExampleDb {
 //    spark.sparkContext.setLogLevel("OFF")
 
 //    val reader = new org.apache.spark.sql.
-    val url= "jdbc:mysql://172.17.180.97:33061/cabin"
+    val url= "jdbc:mysql://172.17.195.193:33061/cabin"
     val df2 = {spark.read.format("jdbc")
       .option("url", url)
       .option("driver", "com.mysql.cj.jdbc.Driver")
